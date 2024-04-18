@@ -43,8 +43,16 @@ Compression: Line 227-230
 2. Save the images in .png and .jpg formats. The quality ratio here is set as 95, but can be modified.
 
 Problem 1.2-Manual White Balancing: Line 233-277
-1. 
+1. second_image is the normalized image after linear transformation step
+2. The ginput function allows the user to select a point on the image and then stores the point in the white_patch_coords
+3. The code manually separates the color channels from the second_image by slicing it for red, green, and blue
+4. The red, green, and blue channels are stacked together to form a preliminary color image
+5. The RGB values of the user-selected white patch are obtained from the manually balanced image to calculate scale factors
+6. The red and blue channels of the entire image are scaled by their respective factors to achieve a white balance. The green channel remains unchanged
 
 Problem 1.2-Manual White Balancing using processed (gamma-encoded) image: Line 280-302
-1. 
+1. second_image is the processed image after gamma encode step
+2. The ginput function allows the user to select a point on the image and then stores the point in the white_patch_coords
+3. The selected white patch's RGB values are extracted from the image and then normalized
+4. Apply white balance correction
 
